@@ -12,7 +12,7 @@ Install the component using [Bower](http://bower.io/):
 $ bower install eel-translate --save
 ```
 
-Or [download as ZIP](https://github.com/my-user/eel-translate/archive/master.zip).
+Or [download as ZIP](https://github.com/evaneus/eel-translate/archive/master.zip).
 
 ## Usage
 
@@ -105,7 +105,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/my-user/eel-translate/releases).
+For detailed changelog, check [Releases](https://github.com/evaneus/eel-translate/releases).
 
 ## License
 

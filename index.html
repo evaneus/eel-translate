@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>&lt;eel-translate&gt;</title>
+
+    <!-- Imports polyfill -->
+    <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <!-- Imports custom element -->
+    <link rel="import" href="eel-translate.html">
+
+</head>
+<body>
+
+    Change language:
+    <a onclick="changeLanguage('en')" href="#">english</a>
+    <a onclick="changeLanguage('fr')" href="#">french</a>
+    <a onclick="changeLanguage('zh')" href="#">chinese</a>
+    <br/>
+    <br/>
+    <!-- Runs custom element -->
+    <eel-translate>
+        Here is some default content.
+        <span lang="en" default="true">Hello!</span>
+        <span lang="fr">Bonjour!</span>
+        <span lang="zh">你好!</span>
+    </eel-translate>
+    <p/>
+    <eel-translate current="fr">
+        Another example.
+        <span lang="en" default="true">How are you</span>
+        <span lang="fr">Ca Va?</span>
+        <span lang="zh">你你好吗?</span>
+    </eel-translate>
+
+    <script>
+      function changeLanguage(newLang) {
+        var elements = document.querySelectorAll("eel-translate");
+        for (var i = 0; i < elements.length; ++i) {
+          var element = elements[i];
+          element.setAttribute("current", newLang);
+        }
+      }
+    </script>
+
+</body>
+</html>

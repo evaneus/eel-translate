@@ -1,0 +1,22 @@
+{
+    "name": "eel-translate",
+    "version": "0.1.0",
+    "description": "Very simple translation/substitution element",
+    "license": "MIT",
+    "main": "eel-translate.html",
+    "keywords": [
+        "polymer",
+        "web-components"
+    ],
+    "ignore": [
+        "**/.*",
+        "bower_components",
+        "/test/"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^0.9.0"
+    },
+    "devDependencies": {
+      "web-component-tester": "*"
+    }
+}

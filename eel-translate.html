@@ -1,0 +1,56 @@
+<!-- Imports polymer -->
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- Defines element markup -->
+<dom-module id="eel-translate">
+
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+Polymer({
+    is: 'eel-translate',
+    properties: {
+      current: {type: String, observer: 'currentChanged'}
+    },
+    currentChanged: function(newVal,oldVal) {
+      this.innerHTML = this.languages[newVal].innerHTML;
+    },
+    // Fires when an instance of the element is created
+    created: function() {
+      console.log('lang set to ' + this.lang);
+      this.languages = {};
+      var langSpans = Polymer.dom(this).querySelectorAll("span[lang]");
+      for (var i = 0; i < langSpans.length; ++i) {
+        var langSpan = langSpans[i];
+        var lang = langSpan.getAttribute('lang');
+        var isDefault = langSpan.getAttribute('default');
+        this.languages[lang] = langSpan;
+        if (isDefault) {
+          this.innerHTML = langSpan.innerHTML;
+        };
+      }
+    },
+
+    // Fires when the local DOM has been fully prepared
+    ready: function() {
+
+       //var translations = this.lightChildren.querySelectorAll('span');
+       //var translations = Polymer.dom(this).querySelectorAll("span[lang=' +  + ']");
+
+      // console.log("found translations");
+
+    },
+
+    // Fires when the element was inserted into the document
+    attached: function() {},
+
+    // Fires when the element was removed from the document
+    detached: function() {},
+
+    // Fires when an attribute was added, removed, or updated
+    attributeChanged: function(name, type) {
+      console.log(name + type);
+    }
+});
+</script>
